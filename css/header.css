@@ -1,0 +1,24 @@
+.header{
+    width: 100%;
+    height: auto;
+    padding: 1rem 2rem;
+    text-align: center;
+    background-color: var(--darkBlack);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.header-list{
+    width: 40%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+.list-option{
+    margin-right: 1rem;
+}
+.list-btn{
+    display: block;
+    position: absolute;
+}

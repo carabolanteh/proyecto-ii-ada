@@ -1,0 +1,43 @@
+.main{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.main-section{
+    background-color: black;
+    margin: 3%;
+    width: 50%;
+    height: auto;
+    border: 1px solid black;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+}
+
+.center-text{
+    width: 100%;
+    height: auto;
+    padding: 25%;
+    background-color: black;
+}
+.top-text, .bottom-text{
+    width: 100%;
+    height: auto;
+    padding: 2%;
+    background-color: blanchedalmond;
+}
+
+.main-button{
+    font-family: 'Bungee Inline', cursive;
+    font-size: 15px;
+    padding: 2x;
+    cursor: pointer;
+    color: black;
+    background-color: mediumvioletred;
+    border: none;
+    border-radius: 8px;
+}

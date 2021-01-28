@@ -1,0 +1,36 @@
+.aside{
+    width: 30%;
+    height: auto;
+    padding: 1rem;
+    background-color: var(--lightBlack);
+    display: flex;
+    align-items: left;
+    flex-direction: column;
+    font-size: small;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+div{
+    padding: 5px;
+}
+.aside-column{
+    display: flex;
+    flex-direction: column;
+}
+.aside-title, .aside-subtitle{
+    font-size: large;
+    text-align: center;
+    font-weight: bolder;
+}
+.aside-subtitle{
+    text-align: left;
+}
+.aside-row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.aside-two{
+    visibility: hidden;
+}

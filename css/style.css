@@ -1,0 +1,50 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+:root{
+    --black: #201e21;
+    --darkBlack: #134B36;
+    --lightBlack: #134b36b4;
+    --white: #E99CE3;
+    --darkBlackLight: #462D1C;
+    --lightBlackLight:  #462d1c86;
+    --whiteLight: #D9BE6C;
+}
+body{
+    background-color: var(--black);
+    width: 100%;
+    height: auto;
+    font-family: 'Bungee Inline', cursive;
+    color: var(--white);
+    display: flex;
+    position: absolute;
+}
+
+.container{
+    position: fixed;
+    width: 70%;
+    height: auto;
+    padding: 0;
+}
+
+/* STROKE TEXT */
+
+.first-text.dark{
+    -webkit-text-stroke: 5px black;
+}
+.first-text.light{
+    -webkit-text-stroke: 5px white;
+}
+
+
+/* MODO CLARO */
+
+body.light-theme{
+    background-color: var(--whiteLight);
+    color: var(--darkBlackLight);
+}
+    

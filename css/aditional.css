@@ -1,0 +1,16 @@
+/* HEADER ICON */
+#img, #txt, #btn-light, #btn-dark{
+    font-size: 16px;
+    cursor: pointer;
+    color: var(--white);
+    background-color: var(--darkBlack);
+    align-items: center;
+    justify-content: center;
+    border: 0;
+}
+
+#btn-dark{
+    visibility: hidden;
+}
+
+ /* HERRAMIENTAS */
