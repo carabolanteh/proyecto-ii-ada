@@ -145,19 +145,25 @@ transparent.addEventListener('click', (e) =>{
 
 borderDark.addEventListener('click', (e)=>{
     e.preventDefault();
-    firstText.classList.add('dark');
-    secondText.classList.add('dark');
+    firstText.classList.add('contorno-oscuro');
+    secondText.classList.add('contorno-oscuro');
+    // alert("le diste click a dark");
+    console.log(borderDark.target)
 })
 borderLight.addEventListener('click', (e)=>{
     e.preventDefault();
-    firstText.classList.add('light');
-    secondText.classList.add('light');
+    firstText.classList.add('contorno-claro');
+    secondText.classList.add('contorno-claro');
+    // alert("le diste click a light");
+    // console.log(borderLight.)
+
 });
 borderVoid.addEventListener('click', (e)=>{
     e.preventDefault();
-    firstText.classList.remove('dark');
-    secondText.classList.remove('dark');
-    firstText.classList.remove('light');
-    secondText.classList.remove('light');
-})
+    // firstText.classList.remove('dark');
+    // secondText.classList.remove('dark');
+    // firstText.classList.remove('light');
+    // secondText.classList.remove('light');
+    alert("le diste click a void");
+});
 // funciones
