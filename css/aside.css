@@ -2,7 +2,7 @@
     width: 30%;
     height: auto;
     padding: 1rem;
-    background-color: var(--lightBlack);
+    background-color: var(--lightGreen);
     display: flex;
     align-items: left;
     flex-direction: column;
@@ -10,6 +10,10 @@
     position: absolute;
     top: 0;
     right: 0;
+}
+.light-aside{
+    background-color: var(--cream);
+    color: var(--brown);
 }
 div{
     padding: 5px;

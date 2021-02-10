@@ -4,10 +4,15 @@
 
 const img = document.getElementById('img');
 const imgContainer = document.getElementById('img-container');
+
 const txt = document.getElementById('txt');
 const txtContainer = document.getElementById('txt-container');
-const btnLight = document.getElementById('btn-light');
-const btnDark = document.getElementById('btn-dark');
+
+const btnOption = document.getElementById('btnOption');
+const btnLight = document.getElementById('btnLight');
+const btnDark = document.getElementById('btnDark');
+
+const header = document.getElementById('header');
 
 // eventos
 
@@ -21,20 +26,33 @@ img.addEventListener('click', (e) =>{
     txtContainer.style.visibility = 'hidden';
     imgContainer.style.visibility = 'visible';
 })
-btnLight.addEventListener('click', (e) =>{
-    e.preventDefault();
-    btnLight.style.visibility = 'hidden';
-    btnDark.style.visibility = 'visible';
+btnOption.addEventListener('click', () =>{
+    if(btnOption.checked){
+        document.body.classList.add('light');
+        imgContainer.classList.add('light-aside');
+        txtContainer.classList.add('light-aside');
+        header.classList.add('light-header');
+        img.classList.add('button-light');
+        txt.classList.add('button-light');
+        btnLight.classList.add('button-light');
+        btnDark.classList.add('button-light');
+
+        btnLight.style.visibility = 'hidden';
+        btnDark.style.visibility = 'visible';
+    }else{
+        document.body.classList.remove('light');
+        imgContainer.classList.remove('light-aside');
+        txtContainer.classList.remove('light-aside');
+        header.classList.remove('light-header');
+        img.classList.remove('button-light');
+        txt.classList.remove('button-light');
+        btnLight.classList.remove('button-light');
+        btnDark.classList.remove('button-light');
+
+        btnDark.style.visibility = 'hidden';
+        btnLight.style.visibility = 'visible';
+    }
 })
-btnDark.addEventListener('click', (e) =>{
-    e.preventDefault();
-    btnDark.style.visibility = 'hidden';
-    btnLight.style.visibility = 'visible';
-})
-
-
-
-
 
 // FUNCIONALIDAD EDICIÓN DE TEXTO
 
@@ -66,6 +84,7 @@ const transparent = document.getElementById('transparent');
 const borderDark = document.getElementById('border-dark');
 const borderLight = document.getElementById('border-light');
 const borderVoid = document.getElementById('border-void');
+
 
 
 // eventos
@@ -145,25 +164,22 @@ transparent.addEventListener('click', (e) =>{
 
 borderDark.addEventListener('click', (e)=>{
     e.preventDefault();
-    firstText.classList.add('contorno-oscuro');
-    secondText.classList.add('contorno-oscuro');
-    // alert("le diste click a dark");
-    console.log(borderDark.target)
+    firstText.style.textShadow = '-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black';
+    secondText.style.textShadow = '-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black';
 })
 borderLight.addEventListener('click', (e)=>{
     e.preventDefault();
-    firstText.classList.add('contorno-claro');
-    secondText.classList.add('contorno-claro');
-    // alert("le diste click a light");
-    // console.log(borderLight.)
-
-});
+    firstText.style.textShadow = '-1px 0 white, 0 1px white, 1px 0 white, 0 -1px white';
+    secondText.style.textShadow = '-1px 0 white, 0 1px white, 1px 0 white, 0 -1px white';
+})
 borderVoid.addEventListener('click', (e)=>{
     e.preventDefault();
-    // firstText.classList.remove('dark');
-    // secondText.classList.remove('dark');
-    // firstText.classList.remove('light');
-    // secondText.classList.remove('light');
-    alert("le diste click a void");
-});
+    firstText.style.textShadow = 'none';
+    secondText.style.textShadow = 'none';
+})
+
+
+
+
+
 // funciones

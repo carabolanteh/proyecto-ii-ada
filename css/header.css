@@ -3,22 +3,30 @@
     height: auto;
     padding: 1rem 2rem;
     text-align: center;
-    background-color: var(--darkBlack);
+    background-color: var(--darkGreen);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 }
+.light-header{
+    background-color: var(--softCream);
+}
 .header-list{
     width: 40%;
     height: auto;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
+    padding: 0;
 }
 .list-option{
+    display: flex;
     margin-right: 1rem;
 }
 .list-btn{
-    display: block;
+    display: flex;
+    padding: 0;
+}
+#btnDark, #btnLight{
     position: absolute;
 }

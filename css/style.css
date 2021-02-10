@@ -7,23 +7,29 @@
 }
 :root{
     --black: #201e21;
-    --darkBlack: #134B36;
-    --lightBlack: #134b36b4;
-    --white: #E99CE3;
-    --darkBlackLight: #462D1C;
-    --lightBlackLight:  #462d1c86;
-    --whiteLight: #D9BE6C;
+    --darkGreen: #134B36;
+    --lightGreen: #134b36b4;
+    --violet: #E99CE3;
+    --brown: #241b15;
+    --darkCream:  #926f58;
+    --cream: #d39d7aa9;
+    --softCream: #f3c5a6;
 }
 body{
     background-color: var(--black);
     width: 100%;
     height: auto;
     font-family: 'Bungee Inline', cursive;
-    color: var(--white);
+    color: var(--violet);
     display: flex;
     position: absolute;
+   
+} 
+/* MODO CLARO */
+.light{
+    background-color: var(--darkCream);
+    color: var(--brown);
 }
-
 .container{
     position: fixed;
     width: 70%;
@@ -31,25 +37,6 @@ body{
     padding: 0;
 }
 
-/* STROKE TEXT */
-
-body.contorno-oscuro{
-    /* -webkit-text-stroke: 5px black; */
-    background: red;
-
-}
-body.contorno-claro{
-    /* -webkit-text-stroke: 5px white; */
-    background: chocolate;
-
-}
 
 
-
-/* MODO CLARO */
-
-body.light-theme{
-    background-color: var(--whiteLight);
-    color: var(--darkBlackLight);
-}
     

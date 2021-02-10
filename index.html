@@ -18,7 +18,7 @@
     <!-- CREAR CABECERA -->
     <div class="container">
 
-        <header class="header">
+        <header class="header" id="header">
 
             <!-- TÍTULO -->
             <h1 class="header-title trazo">GENERADOR DE MEMES</h1>
@@ -26,27 +26,28 @@
             <!-- BOTONES -->
             <ul class="header-list">
                 <li class="list-option">
-                    <button id="img">
+                    <button id="img" class="button">
                         <i class="iconify" data-icon="bx:bx-image" data-inline="false" ></i>
                         Imagen
                     </button>
                 </li>
                 <li class="list-option">
-                    <button id="txt">
+                    <button id="txt" class="button">
                         <i class="iconify" data-icon="fluent:text-font-16-filled" data-inline="false"></i>
                         Texto
                     </button>
                 </li>
                 <li class="list-option">
-                    <div class="div-option">
-                        <button class="list-btn" id="btn-light">
+                    <div class="list-btn">
+                        <input id="btnOption" type="checkbox">
+                        <label for="btnOption" id="btnLight" class="button">
                             <i class="iconify sol" data-icon="mdi:theme-light-dark" data-inline="false"></i>
                             Modo Claro
-                        </button>
-                        <button class="list-btn" id="btn-dark">
+                        </label>
+                        <label for="btnOption" id="btnDark" class="button">
                             <i class="iconify sol" data-icon="mdi:theme-light-dark" data-inline="false"></i>
                             Modo Oscuro
-                        </button>
+                        </label>
                     </div>
                 </li>
             </ul>
