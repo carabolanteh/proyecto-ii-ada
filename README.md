@@ -1,6 +1,6 @@
-## Generador de memes de Hannah Carabolante
+## PROYECTO: generador de memes. De Hannah Carabolante
 
-#### Este proyecto es un generador de memes realizado como evaluación, a partir de lo aprendido en el segundo módulo de la sexta generación de FRONTEND de [ADA](https://adaitw.org/).
+#### Este proyecto es un generador/editor de memes realizado como evaluación, a partir de lo aprendido en el segundo módulo de la sexta generación de FRONTEND de [ADA](https://adaitw.org/).
 
 <br>
 
@@ -23,7 +23,7 @@
 - Abrir tu terminal y poner el comando de  ```git clone <url>```.
 - Entrar a la carpeta del proyecto y abrirlo en tu IDE.
 
-### Este proyecto no necesita la instalación de ningua dependencia, por ahora!
+### Este proyecto no necesita la instalación de ningua dependencia.
 
 <br>
 
