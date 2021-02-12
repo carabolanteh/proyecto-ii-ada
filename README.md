@@ -42,10 +42,10 @@
 
 <br>
 
-### Este pagina web no sería lo que es sin la ayuda de [Jonh](https://github.com/Jonhks) y mis compañeras de curso. No me queda más que agradecerles. 🥰
+### Este pagina web no sería lo que es sin la ayuda de Leydy, [Jonh](https://github.com/Jonhks) y mis compañeras de curso. No me queda más que agradecerles. 🥰
 
 <br>
 
 ***
 
-#### De Hannah, con mucho ❤ ¡para ustedes!
+#### De Hannah, con mucho ❤
