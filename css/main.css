@@ -7,8 +7,6 @@
     justify-content: center;
 }
 .main-section{
-    background-color: var(--black);
-    margin: 3%;
     width: 50%;
     height: auto;
     border: 1px solid black;
@@ -16,28 +14,39 @@
     font-size: 20px;
     font-weight: bold;
     color: black;
+    background-color: var(--black);
+    margin: 3%;
 }
 
 .center-text{
     width: 100%;
     height: auto;
-    padding: 25%;
     background-color: black;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+}
+#url-img{
+    width: 100%;
+    height: auto;
 }
 .top-text, .bottom-text{
     width: 100%;
     height: auto;
-    padding: 2%;
+    padding: 15px;
     background-color: blanchedalmond;
 }
-
+.top-text{
+    margin-bottom: 40%;
+}
 .main-button{
     font-family: 'Bungee Inline', cursive;
     font-size: 15px;
-    padding: 2x;
+    padding: .5rem;
     cursor: pointer;
     color: black;
-    background-color: mediumvioletred;
+    background-color: rgb(167, 161, 145);
     border: none;
     border-radius: 8px;
 }

@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap" rel="stylesheet">
-<script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/main.css">
@@ -14,10 +15,15 @@
     <title>Generador de memes</title>
 </head>
 <body>
+    <input type="checkbox" id="cancelcheck">
+        <label for="cancelcheck">
+            <i class="fas fa-times" id="cancel"></i>
+        </label>
 
     <!-- CREAR CABECERA -->
     <div class="container">
-
+        
+        
         <header class="header" id="header">
 
             <!-- TÍTULO -->
@@ -26,13 +32,13 @@
             <!-- BOTONES -->
             <ul class="header-list">
                 <li class="list-option">
-                    <button id="img" class="button">
+                    <button id="img" class="button button-style">
                         <i class="iconify" data-icon="bx:bx-image" data-inline="false" ></i>
                         Imagen
                     </button>
                 </li>
                 <li class="list-option">
-                    <button id="txt" class="button">
+                    <button id="txt" class="button button-style">
                         <i class="iconify" data-icon="fluent:text-font-16-filled" data-inline="false"></i>
                         Texto
                     </button>
@@ -40,11 +46,11 @@
                 <li class="list-option">
                     <div class="list-btn">
                         <input id="btnOption" type="checkbox">
-                        <label for="btnOption" id="btnLight" class="button">
+                        <label for="btnOption" id="btnLight" class="button button-style">
                             <i class="iconify sol" data-icon="mdi:theme-light-dark" data-inline="false"></i>
                             Modo Claro
                         </label>
-                        <label for="btnOption" id="btnDark" class="button">
+                        <label for="btnOption" id="btnDark" class="button button-style">
                             <i class="iconify sol" data-icon="mdi:theme-light-dark" data-inline="false"></i>
                             Modo Oscuro
                         </label>
@@ -54,16 +60,21 @@
         </header>
     
         <!-- VISUALIZADOR DE IMAGEN -->
+        
         <main class="main">
     
-            <section class="main-section">
-                <article id="first-text" class="top-text">TOP TEXT</article>
-                <article class="center-text"></article>
-                <article id="second-text" class="bottom-text">BOTTOM TEXT</article>
+            <section class="main-section" id="main-section">
+                <article class="center-text" id="center-box">
+                    <p id="first-text" class="top-text">TOP TEXT</p>
+
+                    <img id="url-img" src="" alt="Imagen">
+
+                    <p id="second-text" class="bottom-text">BOTTOM TEXT</p>
+                </article>
             </section>
 
             <!-- BOTON DE DESCARGA -->
-            <button class="main-button">DESCARGAR MEME</button>
+            <button class="main-button button-style" id="download">DESCARGAR MEME</button>
         </main>
     
     </div>
@@ -72,8 +83,8 @@
 
         <!-- EDICIÓN DE IMAGEN -->
 
-    <aside class="aside" id="img-container">
-
+    <aside class="aside aside-one" id="img-container">
+        
         <!-- TITULO -->
         <h3 class="aside-title">IMAGEN</h3>
 
@@ -90,50 +101,57 @@
 
                 <!-- CAMBIO DE COLOR DEL FONDO -->
                 <div>
-                    <label for="get-fondo">FONDO</label>
-                    <input id="get-fondo" type="color">
+                    <label for="get-background">FONDO</label>
+                    <input id="get-background" type="color">
                 </div>
 
             <!-- SELECTOR PARA EDITAR EL COLOR DE FONDO -->
                 <div>
-                    <select name="animal" id="">
-                        <option value="void" >NINGUNO</option>
-                        <option value="light">ACLARAR</option>
-                        <option value="dark">OSCURECER</option>
-                        <option value="different">DIFERENCI</option>
-                        <option value="lumin">LUMINOCIDAD</option>
+                    <select name="filter" id="select-filter">
+                        <option value="unset">NINGUNO</option>
+                        <option value="lighten">ACLARAR</option>
+                        <option value="darken">OSCURECER</option>
+                        <option value="difference">DIFERENCIA</option>
+                        <option value="luminosity">LUMINOCIDAD</option>
                         <option value="multiply">MULTIPLICAR</option>
                     </select>
                 </div>
             </div>
-            
-            
+
             <!-- FILTROS -->
             <h3 class="aside-subtitle">FILTROS</h6>
             <div class="aside-column">
-                <label for="get-brillo">BRILLO</label>
-                <input id="get-brillo" type="range" name="range" min="0" max="10" value="10">
-                <label for="get-opacidad">OPACIDAD</label>
-                <input id="get-opacidad" type="range" name="range" min="0" max="10" value="10">
-                <label for="get-contraste">CONTRASTE</label>
-                <input id="get-contraste" type="range" name="range" min="0" max="10" value="0">
-                <label for="get-desenfoque">DESENFOQUE</label>
-                <input id="get-desenfoque" type="range" name="range" min="0" max="10" value="0">
-                <label for="get-grises">ESCALA DE GRISES</label>
-                <input id="get-grises" type="range" name="range" min="0" max="10" value="0">
+                <label for="get-brightness">BRILLO</label>
+                <input id="get-brightness" type="range" name="range" min="0" max="1" step="0.1" value="1">
+
+                <label for="get-opacity">OPACIDAD</label>
+                <input id="get-opacity" type="range" name="range" min="0" max="1" step="0.1" value="1">
+
+                <label for="get-contrast">CONTRASTE</label>
+                <input id="get-contrast" type="range" name="range" min="100%" max="1000%" step="1%" value="100%">
+
+                <label for="get-blur">DESENFOQUE</label>
+                <input id="get-blur" type="range" name="range" min="0px" max="10px" step="0.1px" value="0px">
+
+                <label for="get-grayscale">ESCALA DE GRISES</label>
+                <input id="get-grayscale" type="range" name="range" min="0%" max="100%" step="1%" value="0%">
+
                 <label for="get-sepia">SEPIA</label>
-                <input id="get-sepia" type="range" name="range" min="0" max="10" value="0">
+                <input id="get-sepia" type="range" name="range" min="0%" max="100%" step="1%" value="0%">
+
                 <label for="get-hue">HUE</label>
-                <input id="get-hue" type="range" name="range" min="0" max="10" value="0">
-                <label for="get-negativo">NEGATIVO</label>
-                <input id="get-negativo" type="range" name="range" min="0" max="10" value="0">
-                <label for="get-saturado">SATURADO</label>
-                <input id="get-saturado" type="range" name="range" min="0" max="10" value="0">
+                <input id="get-hue" type="range" name="range" min="0deg" max="359deg" step="1deg" value="0deg">
+
+                <label for="get-invert">NEGATIVO</label>
+                <input id="get-invert" type="range" name="range" min="0" max="1" step="0.1" value="0">
+
+                <label for="get-saturation">SATURADO</label>
+                <input id="get-saturation" type="range" name="range" min="100%" max="1000%" step="10%" value="100%">
             </div>
         </form>
 
         <!-- BOTON DE RESTABLECER -->
-        <button class="aside-button">RESTABLECER IMAGEN</button>
+        <button class="main-button button-style" id="reset-img">RESTABLECER IMAGEN</button>
     </aside>
     
 
@@ -181,21 +199,22 @@
                 <div class="aside-column">
                     <label for="option">Fuente</label>
                     <select name="option" id="option">
-                        <option value="arial" >Arial</option>
-                        <option value="arial-black">Arial Black</option>
-                        <option value="american-typewriter">American Tyepewriter</option>
-                        <option value="andale-mono">Anadale Mono</option>
-                        <option value="comics-sans-ms">Comics Sans MS</option>
-                        <option value="helvetica">Helvetica</option>
-                        <option value="impact">Impact</option>
+                        <option value="Arial" >Arial</option>
+                        <option value="Arial Black">Arial Black</option>
+                        <option value="American Typewriter">American Tyepewriter</option>
+                        <option value="Andale Mono">Anadale Mono</option>
+                        <option value="Comic Sans DY">Comic Sans DY</option>
+                        <option value="Brock Script">Brock Script</option>
+                        <option value="Helvetica">Helvetica</option>
+                        <option value="Impact">Impact</option>
                     </select>
                 </div>
                 
-                <div>
+                <div >
                     <input id="input-size" type="number" value="40" min="0" max="50">
-                    <button id="left">I</button>
-                    <button id="center">C</button>
-                    <button id="right">D</button>
+                    <button id="left" class="justify"><span class="iconify justify-icon" data-icon="bi:justify-left" data-inline="false"></span></button>
+                    <button id="center" class="justify"><span class="iconify justify-icon" data-icon="bi:justify" data-inline="false"></span></button>
+                    <button id="right" class="justify"><span class="iconify justify-icon" data-icon="bi:justify-right" data-inline="false"></span></button>
                 </div>
 
                 <div class="aside-row">
@@ -212,7 +231,7 @@
                 </div>
                 
                 <div>
-                    <input type="checkbox" id="transparent">
+                    <input type="checkbox" id="transparent" value="unchecked">
                     <label for="transparent">FONDO TRANSPARENTE</label>
                 </div>
 
@@ -224,18 +243,18 @@
                 <button id="border-light">Claro</button>
                 <button id="border-dark">Oscuro</button>
             </div>
-            <div>
-                <label for="espaciado">Espaciado</label>
-                <input type="number" id="espaciado">
+            <div class="aside-column">
+                <label for="padding">Espaciado</label>
+                <input type="number" id="padding" min="10" max="50" value="35">
             </div>
-            <div>
-                <label for="interlineado">Interlineado</label>
-                <select name="interlineado" id="interlineado">
-                    <option value="0.8">0.8</option>
-                    <option value="1">1</option>
-                    <option value="1.2">1.2</option>
-                    <option value="1.5">1.5</option>
-                    <option value="2">2</option>
+            <div class="aside-column">
+                <label for="lineHeight">Interlineado</label>
+                <select name="interlineado" id="lineHeight">
+                    <option value="1">0.8</option>
+                    <option value="1.5">1</option>
+                    <option value="2">1.2</option>
+                    <option value="2.5">1.5</option>
+                    <option value="3">2</option>
                 </section>
             </div>
         </form>
@@ -247,5 +266,7 @@
 
 
     <script src="./js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js" integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js" integrity="sha512-Qlv6VSKh1gDKGoJbnyA5RMXYcvnpIqhO++MhIM2fStMcGT9i2T//tSwYFlcyoRRDcDZ+TYHpH8azBBCyhpSeqw==" crossorigin="anonymous"></script>
 </body>
 </html>

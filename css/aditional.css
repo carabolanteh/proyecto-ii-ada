@@ -7,6 +7,8 @@
     color: var(--violet);
     background-color: var(--darkGreen);
     border: 0;
+    border-radius: 5px;
+    padding: 5px;
 }
 .button-light{
     color: var(--brown);
@@ -19,3 +21,76 @@
     visibility: hidden;
 }
 
+.transparent{
+    position: absolute;
+}
+
+input[type=text] {
+    border: 1px rgb(17, 17, 17);
+    border-radius: 0;
+  
+    -webkit-appearance: none;
+}
+button, input, select, textarea {
+    font-family : inherit;
+    font-size   : 100%;
+}
+
+.justify{
+    margin-left: 15px;
+    border-radius: 5px;
+    width: 8%;
+    height: auto;
+    text-align: center;
+}
+.justify-icon{
+    font-size: 20px;
+    color: black;
+}
+
+.button-style:hover {
+    border: none;
+    background: rgba(0, 0, 0, 0.212);
+    color: #ffffff;
+    transition: all .5s ease;
+}
+
+
+
+/* SIDEBAR */
+#cancel{
+    font-size: 30px;
+    position: absolute;
+    cursor: pointer;
+    right: 15px;
+    top: 15px;  
+    display: none;
+}
+#cancelcheck{
+    display: none;
+}
+
+#reset-img{
+    width: 100%;
+}
+@media (max-width: 1300px){
+    body, label, input{
+        font-size: 20px;
+    }
+     .aside{
+        width: 100%;
+        height: auto;
+        background-color: var(--solidGreen);
+    }
+    #img-container, #txt-container{
+        display: none;
+    }
+    .container{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    .main-section{
+        width: 80%;
+    }
+}

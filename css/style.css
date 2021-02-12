@@ -1,3 +1,7 @@
+@import url('http://fonts.cdnfonts.com/css/american-typewriter');
+@import url('http://fonts.cdnfonts.com/css/andale-mono');
+@import url('http://fonts.cdnfonts.com/css/comic-san-dy');
+@import url('http://fonts.cdnfonts.com/css/brock-script');
 *{
     padding: 0;
     margin: 0;
@@ -7,8 +11,9 @@
 }
 :root{
     --black: #201e21;
-    --darkGreen: #134B36;
-    --lightGreen: #134b36b4;
+    --darkGreen: #0b2e21;
+    --lightGreen: #11382ab4;
+    --solidGreen: #11382a;
     --violet: #E99CE3;
     --brown: #241b15;
     --darkCream:  #926f58;
@@ -37,6 +42,3 @@ body{
     padding: 0;
 }
 
-
-
-    

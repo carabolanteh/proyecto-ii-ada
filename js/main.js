@@ -13,19 +13,10 @@ const btnLight = document.getElementById('btnLight');
 const btnDark = document.getElementById('btnDark');
 
 const header = document.getElementById('header');
+const cancel = document.getElementById('cancel');
 
 // eventos
 
-txt.addEventListener('click', (e) =>{
-    e.preventDefault();
-    imgContainer.style.visibility = 'hidden';
-    txtContainer.style.visibility = 'visible';
-})
-img.addEventListener('click', (e) =>{
-    e.preventDefault();
-    txtContainer.style.visibility = 'hidden';
-    imgContainer.style.visibility = 'visible';
-})
 btnOption.addEventListener('click', () =>{
     if(btnOption.checked){
         document.body.classList.add('light');
@@ -53,6 +44,55 @@ btnOption.addEventListener('click', () =>{
         btnLight.style.visibility = 'visible';
     }
 })
+
+
+/// MEDIA QUERY
+
+var mediaqueryList = window.matchMedia("(max-width: 1300px)");
+
+function txtFunction(mediaqueryListx) {
+    if (mediaqueryList.matches) { 
+       txtContainer.style.display = 'block';
+       cancel.style.display = 'block';
+       cancel.style.zIndex = '1000';
+   }
+}
+
+txt.addEventListener('click', (e) =>{
+    e.preventDefault();
+    imgContainer.style.visibility = 'hidden';
+    txtContainer.style.visibility = 'visible';
+
+    txtFunction(mediaqueryList);
+})
+
+
+
+function imgFunction(mediaqueryListx) {
+    if (mediaqueryList.matches) { 
+       imgContainer.style.display = 'block';
+       cancel.style.display = 'block';
+       cancel.style.zIndex = '1000';
+   }
+}
+
+img.addEventListener('click', (e) =>{
+    e.preventDefault();
+    txtContainer.style.visibility = 'hidden';
+    imgContainer.style.visibility = 'visible';
+
+    imgFunction(mediaqueryList);
+})
+
+cancel.addEventListener('click', ()=>{
+       imgContainer.style.display = 'none';
+       txtContainer.style.display = 'none';
+       cancel.style.display = 'none';
+
+})
+
+
+
 
 // FUNCIONALIDAD EDICIÓN DE TEXTO
 
@@ -85,6 +125,12 @@ const borderDark = document.getElementById('border-dark');
 const borderLight = document.getElementById('border-light');
 const borderVoid = document.getElementById('border-void');
 
+const padding = document.getElementById('padding');
+
+const lineHeight = document.getElementById('lineHeight');
+
+const download = document.getElementById('download');
+const mainSection = document.getElementById('main-section');
 
 
 // eventos
@@ -153,11 +199,17 @@ background.addEventListener('change', (e) =>{
 })
 transparent.addEventListener('click', (e) =>{
     if(transparent.checked){
-        firstText.style.backgroundColor = 'transparent';
-        secondText.style.backgroundColor = 'transparent';
-    }else{
         firstText.style.backgroundColor = `${background.value}`;
         secondText.style.backgroundColor = `${background.value}`;
+        firstText.style.position = 'relative';
+        secondText.style.position = 'relative';
+    }else{
+        firstText.style.backgroundColor = 'transparent';
+        secondText.style.backgroundColor = 'transparent';
+        firstText.style.position = 'absolute';
+        firstText.style.top = '0';
+        secondText.style.position = 'absolute';
+        secondText.style.bottom = '0';
     }
 })
 
@@ -178,8 +230,142 @@ borderVoid.addEventListener('click', (e)=>{
     secondText.style.textShadow = 'none';
 })
 
+padding.addEventListener('change', (e)=>{
+    e.preventDefault();
+    firstText.style.padding = `${padding.value}px`;
+    secondText.style.padding = `${padding.value}px`;
+})
+
+lineHeight.addEventListener('change', (e)=>{
+    e.preventDefault();
+    firstText.style.lineHeight = `${lineHeight.value}px`;
+    secondText.style.lineHeight = `${lineHeight.value}px`;
+    console.log(lineHeight.value);
+})
+
+download.addEventListener('click', ()=>{
+    domtoimage.toBlob(mainSection)
+    .then(function (blob) {
+        window.saveAs(blob, 'meme.png');
+    });
+})
+
+// FUNCIONALIDAD EDICIÓN DE IMG
 
 
+const urlImg = document.getElementById('url-img');
+const getUrl = document.getElementById('get-url');
+
+const getBackground = document.getElementById('get-background');
+const centerBox = document.getElementById('center-box');
+
+const selectFilter = document.getElementById('select-filter');
 
 
-// funciones
+getUrl.addEventListener('keyup', (e)=>{
+    e.preventDefault();
+    const url = getUrl.value;
+    urlImg.setAttribute('src', url);
+    firstText.style.margin = '0';
+})
+getBackground.addEventListener('change', (e) =>{
+    e.preventDefault();
+    centerBox.style.backgroundColor = `${getBackground.value}`;
+})
+selectFilter.addEventListener('change', (e) =>{
+    e.preventDefault();
+    centerBox.style.backgroundBlendMode = `${selectFilter.value}`;
+    console.log(selectFilter.value);
+})
+
+//filtros
+
+const getBrightness = document.getElementById('get-brightness');
+const getOpacity = document.getElementById('get-opacity');
+const getContrast = document.getElementById('get-contrast'); 
+const getBlur = document.getElementById('get-blur'); 
+const getGrayscale = document.getElementById('get-grayscale');
+const getSepia = document.getElementById('get-sepia');
+const getHue = document.getElementById('get-hue');
+const getInvert = document.getElementById('get-invert');
+const getSaturation = document.getElementById('get-saturation');
+   
+
+getBrightness.addEventListener('change', (e) =>{
+    e.preventDefault();
+    urlImg.style.filter = `brightness(${getBrightness.value})`;
+})
+getOpacity.addEventListener('change', (e) =>{
+    e.preventDefault();
+    urlImg.style.filter = `opacity(${getOpacity.value})`;
+})
+getContrast.addEventListener('change', (e) =>{
+    e.preventDefault();
+    urlImg.style.filter = `contrast(${getContrast.value})`;
+})
+getBlur.addEventListener('change', (e) =>{
+    e.preventDefault();
+    urlImg.style.filter = `blur(${getBlur.value})`;
+    console.log(getBlur.value);
+})
+getGrayscale.addEventListener('change', (e) =>{
+    e.preventDefault();
+    urlImg.style.filter = `grayscale(${getGrayscale.value})`;
+})
+getSepia.addEventListener('change', (e) =>{
+    e.preventDefault();
+    urlImg.style.filter = `sepia(${getSepia.value})`;
+})
+getHue.addEventListener('change', (e) =>{
+    e.preventDefault();
+    urlImg.style.filter = `hue-rotation(${getHue.value})`;
+})
+getInvert.addEventListener('change', (e) =>{
+    e.preventDefault();
+    urlImg.style.filter = `invert(${getInvert.value})`;
+})
+getSaturation.addEventListener('change', (e) =>{
+    e.preventDefault();
+    urlImg.style.filter = `saturation(${getSaturation.value})`;
+})
+
+
+/////// BOTON DE RESET///////
+const resetImg = document.getElementById('reset-img');
+
+resetImg.addEventListener('click', (e) =>{
+    getBackground.value = '#000000';
+    centerBox.style.backgroundColor = '#000000';
+
+    selectFilter.value = 'unset';
+    centerBox.style.backgroundBlendMode = 'unset';
+
+    getBrightness.value = '1';
+    urlImg.style.filter = `brightness(1)`;
+
+    getBlur.value = '1';
+    urlImg.style.filter = `blur(1)`;
+
+    getOpacity.value = '100%';
+    urlImg.style.filter = `opacity(100%)`;
+
+    getContrast.value = '0';
+    urlImg.style.filter = `contrast(0)`;
+
+    getGrayscale.value = '0';
+    urlImg.style.filter = `grayscale(0)`;
+
+    getSepia.value = '0';
+    urlImg.style.filter = `sepia(0)`;
+
+    getHue.value = '0';
+    urlImg.style.filter = `hue(0)`;
+
+    getInvert.value = '0';
+    urlImg.style.filter = `invert(0)`;
+
+    getSaturation.value = '100%';
+    urlImg.style.filter = `saturation(100)`;
+})
+
+
